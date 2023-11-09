@@ -81,7 +81,7 @@ class MemcachedStorage(Storage):
             MemcachedClientP,
             module.HashClient(hosts, **kwargs)
             if len(hosts) > 1
-            else module.PooledClient(*hosts, **kwargs),
+            else module.Client(*hosts, **kwargs),
         )
 
     def call_memcached_func(
